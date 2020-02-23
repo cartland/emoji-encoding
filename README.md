@@ -7,9 +7,10 @@ Hexadecimal | Emoji
 --- | ---
 08:21:5B:CC | 😎🐶🍕🎥
 
-The proposed set of emoji has been selected to be relatively easy to
-distinguish each character when viewed at a glance as well as when
-described in English.
+The subset of emoji has been selected to reduce the number of emoji
+that are similar to each other. The goal is to make it easier to
+understand the emoji with a quick glance, or with a short description
+in English.
 
 # Emoji Encoding Table
 
