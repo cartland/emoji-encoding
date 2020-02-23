@@ -12,11 +12,12 @@ that are similar to each other. The goal is to make it easier to
 understand the emoji with a quick glance, or with a short description
 in English.
 
+* CSV: [`Unicode-v13.0-2020-02-22.csv`](../master/Unicode-v13.0-2020-02-22.csv)
+* JavaScript: [`emoji-encoder.js`](../master/javascript/emoji-encoder.js)
+
 # Emoji Encoding Table
 
 Selected Unicode characters and descriptions downloaded from https://unicode.org/emoji/charts/full-emoji-list.html.
-
-File: [`Unicode-v13.0-2020-02-22.csv`](../master/Unicode-v13.0-2020-02-22.csv)
 
 Dec|Hex|Bin|Code|Emoji|Description
 --- | --- | --- | --- | --- | ---
