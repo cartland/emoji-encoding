@@ -55,18 +55,24 @@ def AnalyzeApk(apk_path, apk_rel_path=None, prefix=''):
         m = re.match('SHA256:\s+([0-9A-F:]+)', line.strip())
         if m:
           sha256 = m.group(1)
-      if not md5 or not sha1:
-        print prefix + '  *** could not determine md5 and sha1 from cert'
+      if not md5:
+        print prefix + '  *** could not determine md5 from cert'
       else:
         # md5
         md5Emoji = ':'.join(HexToEmoji(md5.split(':')))
         print prefix + '  md5: %s' % (md5)
         print prefix + '       %s' % (md5Emoji)
+      if not sha1:
+        print prefix + '  *** could not determine sha1 from cert'
+      else:
         # sha1
         sha1Emoji = ':'.join(HexToEmoji(sha1.split(':')))
         print prefix + '  sha1: %s' % (sha1)
         print prefix + '        %s' % (sha1Emoji)
         # sha256
+      if not sha256:
+        print prefix + '  *** could not determine sha256 from cert'
+      else:
         sha256Emoji = ':'.join(HexToEmoji(sha256.split(':')))
         print prefix + '  sha256: %s' % (sha256)
         print prefix + '          %s' % (sha256Emoji)
