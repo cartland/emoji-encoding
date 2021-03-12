@@ -6,13 +6,17 @@ const EMOJI_LOOKUP_TABLE = getEmojiLookupTable();
  * @byteArray Array of byte input.
  */
 function emojiEncode(byteArray) {
-  if (!byteArray || (!(typeof byteArray !== 'array'))) {
+  if (!Array.isArray(byteArray)) {
     return [];
   }
   const emojiArray = [];
   for (var i = 0; i < byteArray.length; i++) {
     const inputByte = byteArray[i];
-    emojiArray.push(EMOJI_LOOKUP_TABLE[inputByte]);
+    if (inputByte in EMOJI_LOOKUP_TABLE) {
+      emojiArray.push(EMOJI_LOOKUP_TABLE[inputByte]);
+    } else {
+      emojiArray.push(null);
+    }
   }
   return emojiArray;
 }

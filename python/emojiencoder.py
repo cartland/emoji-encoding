@@ -10,10 +10,15 @@ def main(argv):
     else:
         hexInput = argv[1]
         hexList = hexInput.split(':')
-        indexList = [int(h, 16) for h in hexList]
+        indexList = []
+        for h in hexList:
+          try:
+            indexList.append(int(h, 16))
+          except ValueError:
+            indexList.append(None)
 
     emojiList = emojiEncode(indexList)
-    emojiString = ':'.join(emojiList)
+    emojiString = ':'.join([(str(e) if e is not None else '--') for e in emojiList])
     print(emojiString)
 
 
@@ -31,7 +36,10 @@ def emojiEncode(byteList):
         return []
     emojiList = []
     for inputByte in byteList:
-        emojiList.append(EMOJI_LOOKUP_TABLE[inputByte])
+        if (inputByte in EMOJI_LOOKUP_TABLE):
+          emojiList.append(EMOJI_LOOKUP_TABLE[inputByte])
+        else:
+          emojiList.append(None)
     return emojiList
 
 """Lookup table from index number to emoji string.
